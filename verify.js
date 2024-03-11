@@ -23,7 +23,7 @@ app.post('/Shopify-Verify-Email', async (req, res) => {
     const response = await axios.get(`https://${shopifyStore}/admin/api/${apiVersion}/customers.json`, {
       headers: {
         'Content-Type': 'application/json',
-        'X-Shopify-Storefront-Access-Token': accessToken,
+        'X-Shopify-Access-Token': accessToken,
       },
     });
 

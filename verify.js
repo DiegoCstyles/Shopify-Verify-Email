@@ -1,6 +1,7 @@
 const express = require('express');
-import fetch from 'node-fetch';
 const cors = require('cors');
+
+import fetch from 'node-fetch';
 
 const app = express();
 

@@ -15,7 +15,10 @@ app.use(cors());
 
 app.post('/Shopify-Verify-Email', async (req, res) => {
   const emailField = req.body.email;
-
+  console.log("shopifyStore ", shopifyStore);
+  console.log("apiVersion ", apiVersion);
+  console.log("accessToken ", accessToken);
+  
   try {
     const response = await axios.get(`https://${shopifyStore}/admin/api/${apiVersion}/customers.json`, {
       headers: {

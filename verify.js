@@ -15,10 +15,7 @@ app.use(cors());
 
 app.post('/Shopify-Verify-Email', async (req, res) => {
   const emailField = req.body.email;
-  console.log("shopifyStore ", shopifyStore);
-  console.log("apiVersion ", apiVersion);
-  console.log("accessToken ", accessToken);
-  
+
   try {
     const response = await axios.get(`https://${shopifyStore}/admin/api/${apiVersion}/customers.json`, {
       headers: {
@@ -32,9 +29,6 @@ app.post('/Shopify-Verify-Email', async (req, res) => {
 
       // Assuming customFieldValues.Email contains the email to filter
       const filteredCustomer = data.customers.find(customer => customer.email === emailField);
-
-      // filteredCustomer will now contain the customer object with the specified email
-      console.log(filteredCustomer);
 
       return res.status(200).json(filteredCustomer); // Adjust the response as needed
     } else {
